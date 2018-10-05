@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Школьный_проект
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
-        Form2 loginForm;
-
-        public Form1( )
+        public Form3( )
         {
             InitializeComponent( );
-            loginForm = new Form2( );
-        }
-
-        private void button1_Click( object sender, EventArgs e )
-        {
-            this.loginForm.ShowDialog( );
-            this.label3.Text = this.loginForm.Student.ToString( );
         }
     }
 }
