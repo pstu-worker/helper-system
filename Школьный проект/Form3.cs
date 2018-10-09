@@ -13,7 +13,6 @@ namespace Школьный_проект
     public partial class Form3 : Form
     {
         Form2 loginForm;
-        const int i = 0;
 
         public Form3( )
         {
