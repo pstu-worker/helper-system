@@ -8,22 +8,18 @@ namespace Школьный_проект
 {
     class Student
     {
-        private string name;
-        private string surname;
+        private const string SPACE = " ";
 
-        public string Name { get => name; set => name = value; }
+        public string Name { get; set; }
 
-        public string Surname { get => surname; set => surname = value; }
+        public string Surname { get; set; }
 
         public Student(  )
         {
-            this.name = "";
-            this.surname = "";
+            Name = "";
+            Surname = "";
         }
 
-        public override string ToString( )
-        {
-            return surname + ", " + name;
-        }
+        public override string ToString( ) => Surname + SPACE + Name;
     }
 }

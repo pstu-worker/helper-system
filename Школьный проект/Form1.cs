@@ -12,18 +12,15 @@ namespace Школьный_проект
 {
     public partial class Form1 : Form
     {
-        Form2 loginForm;
+        Form3 startForm;
 
-        public Form1( )
-        {
-            InitializeComponent( );
-            loginForm = new Form2( );
-        }
+        public Form1( ) => InitializeComponent( );
 
         private void button1_Click( object sender, EventArgs e )
         {
-            this.loginForm.ShowDialog( );
-            this.label3.Text = this.loginForm.Student.ToString( );
+            startForm = new Form3( );
+            startForm.ShowDialog( );
+            Close( );
         }
     }
 }

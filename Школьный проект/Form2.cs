@@ -12,12 +12,16 @@ namespace Школьный_проект
 {
     public partial class Form2 : Form
     {
+        const string NULL = "";
+
         private Student student;
+        private string surname;
+        private string name;
 
         public Form2( )
         {
             InitializeComponent( );
-            this.student = new Student( );
+            student = new Student( );
         }
 
         internal Student Student { get => student; set => student = value; }
@@ -28,20 +32,25 @@ namespace Школьный_проект
         {
             try
             {
-                string surname = SurnameTextBox.Text.ToLower( );
-                string name = NameTextBox.Text.ToLower( );
-                if ( surname == "" || name == "" )
+                surname = SurnameTextBox.Text.ToLower( );
+                name = NameTextBox.Text.ToLower( );
+                if ( surname == NULL || name == NULL )
                 {
                     throw new Exception( );
                 }
-                this.student.Surname = UppercaseFirst( surname );
-                this.student.Name = UppercaseFirst( name );
-                this.Close( );
+                student.Surname = UppercaseFirst( surname );
+                student.Name = UppercaseFirst( name );
+                Close( );
             }
             catch ( Exception )
             {
-                
+                SurnameLabel.Visible = surname == NULL ? true : false;
+                NameLabel.Visible = name == NULL ? true : false;
             }
         }
+
+        private void SurnameChangeEvent( object sender, EventArgs e ) => SurnameLabel.Visible = false;
+
+        private void NameChangeEvent( object sender, EventArgs e ) => NameLabel.Visible = false;
     }
 }
